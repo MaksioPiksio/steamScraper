@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 
-// import request from "request";
+const request = require("request");
 const dotenv = require("dotenv")
 
 dotenv.config();
