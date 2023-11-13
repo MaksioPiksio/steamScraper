@@ -21,3 +21,5 @@ app.use("/", (req, res) => {
 app.listen(8459, () => {
     console.log(`Port 8459`);
 });
+
+module.exports = app;
