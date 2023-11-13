@@ -1,8 +1,7 @@
-const express = require("express");
-const cors = require("cors");
-
-const request = require("request");
-const dotenv = require("dotenv");
+import express from "express";
+import cors from "cors";
+import request from "request";
+import dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
@@ -15,8 +14,6 @@ app.get("/:goods_id", (req, res) => {
     req.pipe(request(url)).pipe(res);
 });
 
-app.listen(8459, () => {
-    console.log(`Port 8459`);
-});
+app.listen(8459);
 
-module.exports = app;
+export default app;
