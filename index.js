@@ -10,7 +10,10 @@ const app = express();
 app.use(cors());
 
 app.use("/hello", (req, res) => {
-    res.send("Hello World!");
+    // res.send("Hello World!");
+    // const { goods_id } = req.params;
+    const url = `https://buff.163.com/api/market/goods/sell_order?game=csgo&goods_id=44060`;
+    req.pipe(request(url)).pipe(res);
 });
 
 // app.get("/:goods_id", (req, res) => {
