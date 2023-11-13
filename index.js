@@ -10,10 +10,10 @@ app.use(cors());
 
 app.get("/:goods_id", (req, res) => {
     const { goods_id } = req.params;
-    const url = `${process.env.PORT}sell_order?game=csgo&goods_id=${goods_id}`;
+    const url = `${process.env.URL}sell_order?game=csgo&goods_id=${goods_id}`;
     req.pipe(request(url)).pipe(res);
 });
 
-app.listen(3000, () => {
-    console.log("Port 3000");
+app.listen(process.env.PORT, () => {
+    console.log(`Port ${process.env.PORT}`);
 });
