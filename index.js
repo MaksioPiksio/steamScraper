@@ -1,10 +1,10 @@
 import express from "express";
+import request from "request";
 import { getinventory } from "get-steam-inventory";
 
 var steamid = "76561198999425153";
-
+let t = "s";
 const bulkList = (steamid) => {
-    let t;
     getinventory(730, steamid, 2)
         .then((data) => {
             t = data.marketnames;
