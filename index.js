@@ -2,7 +2,7 @@ import express from "express";
 import { getinventory } from "get-steam-inventory";
 
 var steamid = "76561198999425153";
-s;
+
 const bulkList = (steamid) => {
     let t;
     getinventory(730, steamid, 2)
