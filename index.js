@@ -1,19 +1,24 @@
 import express from "express";
-import cors from "cors";
-import request from "request";
-import dotenv from "dotenv";
+import { getinventory } from "get-steam-inventory";
 
-dotenv.config();
+var steamid = "76561198999425153";
+s;
+const bulkList = (steamid) => {
+    let t;
+    getinventory(730, steamid, 2)
+        .then((data) => {
+            t = data.marketnames;
+        })
+        .catch((err) => {
+            t = "(" + err + " user - " + steamid + ")";
+        });
+    return t;
+};
+
 const app = express();
 
-app.use(cors());
+app.get("/", (req, res) => res.send(bulkList(steamid)));
 
-app.get("/:goods_id", (req, res) => {
-    const { goods_id } = req.params;
-    const url = `https://buff.163.com/api/market/goods/sell_order?game=csgo&goods_id=${goods_id}`;
-    req.pipe(request(url)).pipe(res);
-});
-
-app.listen(8459);
+app.listen(8460);
 
 export default app;
