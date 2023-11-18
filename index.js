@@ -8,7 +8,6 @@ const bulkList = (steamid) => {
     getinventory(730, steamid, 2)
         .then((data) => {
             t = data.marketnames;
-            t = "test";
         })
         .catch((err) => {
             t = "(" + err + " user - " + steamid + ")";
