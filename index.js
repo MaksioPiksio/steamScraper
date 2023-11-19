@@ -2,7 +2,7 @@ import express from "express";
 import request from "request";
 import { getinventory } from "get-steam-inventory";
 
-var steamid = "76561199119432593";
+var steamid = "76561198999425153";
 let t = "";
 const bulkList = (steamid) => {
     getinventory(730, steamid, 2)
@@ -17,8 +17,8 @@ const bulkList = (steamid) => {
 
 const app = express();
 
-app.get("/", (req, res) => res.send(bulkList(steamid)));
+app.get("", (req, res) => res.send(bulkList(steamid)));
 
-app.listen(8460);
+app.listen(8460, () => console.log("Server running on port 8460"));
 
 export default app;
