@@ -4,6 +4,7 @@ import { getinventory } from "get-steam-inventory";
 
 var steamid = "76561198999425153";
 let t = "";
+
 const bulkList = (steamid) => {
     getinventory(730, steamid, 2)
         .then((data) => {
