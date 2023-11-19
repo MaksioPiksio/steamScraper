@@ -19,6 +19,4 @@ const app = express();
 
 app.get("/", (req, res) => res.send(bulkList(steamid)));
 
-app.listen(8460);
-
 export default app;
