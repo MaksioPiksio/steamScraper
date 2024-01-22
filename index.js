@@ -20,6 +20,8 @@ const app = express();
 
 app.get("", (req, res) => res.send(bulkList(steamid)));
 
+app.get("/:goods_id", (req, res) => res.send(bulkList(req.params.goods_id)));
+
 app.listen(8460, () => console.log("Server running on port 8460"));
 
 export default app;
